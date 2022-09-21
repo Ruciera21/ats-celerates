@@ -1,0 +1,16 @@
+.image2{
+    display: none;
+ }
+ 
+ @media only screen and (max-width: 768px){          
+     .image1{
+      display: none;
+    }
+ 
+    .image2{
+      display: block;
+    }
+    .dropdown-menu{
+      display:none
+    }
+ }

@@ -35,9 +35,7 @@ function Navbar() {
             <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
           </div>
         </div>
-        <div className="flex absolute right-14 top-4">
-          <Dropdown />
-        </div>
+        
         <ul className="md:flex md:absolute md:right-36 md:text-center hidden z-50 uppercase items-right gap-8 text-white">
           <li>
             <Link to="/" className="py-3 px-4 inline-flex">
@@ -46,10 +44,11 @@ function Navbar() {
           </li>
 
           <li>
-            <Link to="/" className="py-3 px-4 inline-flex">
+            <Link to="/user/applications" className="py-3 px-4 inline-flex">
               Applications
             </Link>
           </li>
+          <Dropdown />
         </ul>
         {/* mobile view */}
 

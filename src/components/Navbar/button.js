@@ -7,21 +7,21 @@ function Dropdown() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div class="flex items-center md:order-2">
+    <div className="flex items-center md:order-2">
       <div>
-        <div class="dropdown relative">
+        <div className="dropdown relative">
           <button
             type="button"
-            class="hidden md:flex text-sm transition duration-150 ease-in-out items-center whitespace-nowrap bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            className="hidden md:flex text-sm transition duration-150 ease-in-out items-center whitespace-nowrap bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
             id="user-menu-button"
             aria-expanded="false"
             data-bs-toggle="dropdown"
           >
-            <span class="sr-only">Open user menu</span>
-            <img class="flex w-12 h-12 rounded-full" src={PP} alt="user" />
+            <span className="sr-only">Open user menu</span>
+            <img className="w-12 h-12 rounded-full" src={PP} alt="user" />
           </button>
           <ul
-            class="
+            className="
           dropdown-menu
           min-w-max
           absolute
@@ -48,7 +48,7 @@ function Dropdown() {
             <li>
               <Link
                 to="/"
-                class="
+                className="
               dropdown-item
               text-sm
               py-2
@@ -67,7 +67,7 @@ function Dropdown() {
             <li>
               <Link
                 to="/"
-                class="
+                className="
               dropdown-item
               text-sm
               py-2
@@ -86,7 +86,7 @@ function Dropdown() {
             <li>
               <Link
                 to="/login"
-                class="
+                className="
               dropdown-item
               text-sm
               py-2

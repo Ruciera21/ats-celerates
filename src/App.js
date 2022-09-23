@@ -9,6 +9,8 @@ import Profile from "./pages/user/profile";
 import Application from "./pages/user/application";
 import JobDetail from "./pages/user/jobDetail";
 import JobForm from "./pages/admin/jobForm";
+// import LayoutAdmin from "./components/parent";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
@@ -16,15 +18,50 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/admin/dashboard" element={<Dashboard/>} />
-          <Route path="/admin/jobs" element={<JobsList/>} />
-          <Route path="/admin/jobs/jobId" element={<JobDetails/>} />
-          <Route path="/admin/jobs/form" element={<JobForm/>} />
-          <Route path="/admin/applicant/applicantId" element={<ApplicantDetails/>} />
-          <Route path="/user/profile" element={<Profile/>} />
-          <Route path="/user/applications" element={<Application/>} />
-          <Route path="/user/jobs/jobId" element={<JobDetail/>} />
-          
+          <Route
+            path="/admin/dashboard"
+            element={
+              <>
+                <Dashboard />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/admin/jobs"
+            element={
+              // <LayoutAdmin>
+              <JobsList />
+              // </LayoutAdmin>
+            }
+          />
+          <Route
+            path="/admin/jobs/jobId"
+            element={
+              // <LayoutAdmin>
+              <JobDetails />
+              // </LayoutAdmin>
+            }
+          />
+          <Route
+            path="/admin/jobs/form"
+            element={
+              // <LayoutAdmin>
+              <JobForm />
+              // </LayoutAdmin>
+            }
+          />
+          <Route
+            path="/admin/applicant/applicantId"
+            element={
+              // <LayoutAdmin>
+              <ApplicantDetails />
+              // </LayoutAdmin>
+            }
+          />
+          <Route path="/user/profile" element={<Profile />} />
+          <Route path="/user/applications" element={<Application />} />
+          <Route path="/user/jobs/jobId" element={<JobDetail />} />
         </Routes>
       </BrowserRouter>
     </>

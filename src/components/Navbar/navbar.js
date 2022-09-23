@@ -10,8 +10,8 @@ function Navbar() {
 
   return (
     <nav className="bg-slate-900 shadow-2xl">
-      <div className="flex  items-center font-[Poppins] font-medium justify-start">
-        <div className="z-50 md:w-auto w-full h-max top-0 flex justify-between">
+      <div className="flex items-center font-[Poppins] font-medium justify-start">
+        <div className="z-50 md:w-auto w-full flex justify-between">
           <Link to="/">
             <div className="image-wrapper flex relative pt-4 px-4 mr-96 right-16 md:left-24 md:bg-white">
               <img
@@ -20,7 +20,7 @@ function Navbar() {
                 className="hidden md:flex md:relative right-14 bottom-2 h-14 md:cursor-pointer md:right-0 image1"
               />
             </div>
-            <div className="image-wrapper flex z-50 md:hidden py-10 px-3">
+            <div className="image-wrapper flex z-50 md:hidden py-7 px-3">
               <img
                 src={LogoWhite}
                 alt="celerates-logo"
@@ -35,7 +35,7 @@ function Navbar() {
             <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
           </div>
         </div>
-        
+
         <ul className="md:flex md:absolute md:right-36 md:text-center hidden z-50 uppercase items-right gap-8 text-white">
           <li>
             <Link to="/" className="py-3 px-4 inline-flex">

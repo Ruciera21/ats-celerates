@@ -5,7 +5,9 @@ import Dashboard from "./pages/admin";
 import JobsList from "./pages/admin/jobsList";
 import JobDetails from "./pages/admin/jobDetails";
 import ApplicantDetails from "./pages/admin/applicantDetails";
-import Profile from "./pages/user/profile";
+import { Profile } from "./pages/user/profile";
+import { Experience } from "./pages/user/profile";
+import { Skills } from "./pages/user/profile";
 import Application from "./pages/user/application";
 import JobDetail from "./pages/user/jobDetail";
 import JobForm from "./pages/admin/jobForm";
@@ -60,6 +62,8 @@ function App() {
             }
           />
           <Route path="/user/profile" element={<Profile />} />
+          <Route path="/user/profile/skills" element={<Skills />} />
+          <Route path="/user/profile/experience" element={<Experience />} />
           <Route path="/user/applications" element={<Application />} />
           <Route path="/user/jobs/jobId" element={<JobDetail />} />
         </Routes>

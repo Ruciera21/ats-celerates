@@ -25,13 +25,13 @@ function Dropdown() {
           dropdown-menu
           min-w-max
           absolute
-        hidden
+          hidden
           bg-white
           text-base
           z-50
           float-right
-          py-4
-          pr-24
+          py-2
+          pr-8
           list-none
           text-left
           rounded-lg
@@ -45,7 +45,7 @@ function Dropdown() {
         "
             aria-labelledby="dropdownMenuButton2"
           >
-            <li>
+            {/* <li>
               <Link
                 to="/"
                 className="
@@ -63,26 +63,28 @@ function Dropdown() {
               hover:bg-gray-100
             "
               ></Link>
-            </li>
+            </li> */}
+
             <li>
               <Link
-                to="/"
+                to="/user/profile"
                 className="
               dropdown-item
               text-sm
               py-2
               px-4
+              hidden
               font-normal
               md:block
-              hidden
               w-full
               whitespace-nowrap
               bg-transparent
               text-gray-700
               hover:bg-gray-100
             "
-              ></Link>
+              >Profile</Link>
             </li>
+
             <li>
               <Link
                 to="/login"
@@ -102,6 +104,28 @@ function Dropdown() {
             "
               >
                 Login
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/"
+                className="
+              dropdown-item
+              text-sm
+              py-2
+              px-4
+              font-normal
+              md:block
+              hidden
+              w-full
+              whitespace-nowrap
+              bg-transparent
+              text-gray-700
+              hover:bg-gray-100
+            "
+              >
+                Logout
               </Link>
             </li>
           </ul>

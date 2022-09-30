@@ -9,7 +9,7 @@ const Dashboard = () => {
   return (
     <div className="flex items-start justify-between">
       <Sidebar />
-      <div className="flex flex-col w-full pl-0 md:p-4 md:space-y-4">
+      <div className="flex flex-col w-full pl-0 mt-8 md:p-4 md:space-y-4">
         <section className="box-border mb-5">
           <div className="flex relative flex-row gap-8 md:gap-40 justify-center text-center items-center font-[Poppins]">
             <div className="bg-gray-300 -z-50 border-solid box-border flex flex-col items-center md:box-content rounded-2xl w-1/3 h-1/2">
@@ -24,7 +24,6 @@ const Dashboard = () => {
             </div>
           </div>
         </section>
-        {/* <Footer /> */}
       </div>
     </div>
   );

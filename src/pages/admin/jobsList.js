@@ -4,11 +4,11 @@ import Sidebar from "../../components/Sidebar";
 
 const JobsList = () => {
   return (
-    <div className="flex items-start justify-between">
+    <div className="flex items-start">
       <Sidebar />
       <section>
-        <div className="container mx-auto ">
-          <table className=" leading-normal table-auto text-sm text-left text-gray-500 mx-auto">
+        <div className="container mt-8 ml-8">
+          <table className=" leading-normal table-auto text-sm text-left text-gray-500 mx-auto font-[Poppins]">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 text-center">
               <tr>
                 <th className="px-6 py-3">Title</th>

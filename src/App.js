@@ -5,7 +5,7 @@ import Dashboard from "./pages/admin";
 import JobsList from "./pages/admin/jobsList";
 import JobDetails from "./pages/admin/jobDetails";
 import ApplicantDetails from "./pages/admin/applicantDetails";
-import { Profile } from "./pages/user/profile";
+import { EditProfile, Profile } from "./pages/user/profile";
 import { Experience } from "./pages/user/profile";
 import { Skills } from "./pages/user/profile";
 import Application from "./pages/user/application";
@@ -13,6 +13,8 @@ import JobDetail from "./pages/user/jobDetail";
 import JobForm from "./pages/admin/jobForm";
 // import LayoutAdmin from "./components/parent";
 import Sidebar from "./components/Sidebar";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 
 function App() {
   return (
@@ -62,10 +64,13 @@ function App() {
             }
           />
           <Route path="/user/profile" element={<Profile />} />
+          <Route path="/user/profile/edit" element={<EditProfile />} />
           <Route path="/user/profile/skills" element={<Skills />} />
           <Route path="/user/profile/experience" element={<Experience />} />
           <Route path="/user/applications" element={<Application />} />
           <Route path="/user/jobs/jobId" element={<JobDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </>

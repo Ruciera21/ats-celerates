@@ -12,7 +12,7 @@ const Sidebar = () => {
       <div className="flex">
         {/* aside */}
         <aside
-          className="flex gap-3 w-64 flex-col space-y-2 border-r-2 border-gray-200 bg-slate-900 p-2 text-white h-[100vh]"
+          className="flex flex-nowrap h-screen gap-2 w-fit flex-col space-y-2 border-r-2 border-gray-200 bg-slate-900 p-2 text-white font-[Poppins] text-sm"
           x-show="asideOpen"
         >
           <div className="flex items-center gap-3 space-x-1 rounded-md px-2 my-3 pt-1 hover:text-blue-600">
@@ -20,9 +20,9 @@ const Sidebar = () => {
           </div>
           <Link
             to="/admin/dashboard"
-            className="flex items-center gap-3 space-x-1 rounded-md px-2 py-3 hover:text-blue-600"
+            className="flex items-center gap-1 space-x-1 rounded-md px-2 py-3 hover:text-blue-600"
           >
-            <span className="text-[32px]">
+            <span className="text-[24px]">
               <ion-icon name="podium-outline"></ion-icon>
             </span>
             <span className="text-2xl">
@@ -32,9 +32,9 @@ const Sidebar = () => {
           </Link>
           <Link
             to="/admin/jobs"
-            className="flex items-center gap-3 space-x-1 rounded-md px-2 py-3 hover:text-blue-600"
+            className="flex items-center gap-1 space-x-1 rounded-md px-2 py-3 hover:text-blue-600"
           >
-            <span className="text-[32px]">
+            <span className="text-[24px]">
               <ion-icon name="briefcase-outline"></ion-icon>
             </span>
             <span className="text-2xl">
@@ -44,9 +44,9 @@ const Sidebar = () => {
           </Link>
           <Link
             to="/admin/jobs/form"
-            className="flex items-center gap-3 space-x-1 rounded-md px-2 py-3 hover:text-blue-600"
+            className="flex items-center gap-1 space-x-1 rounded-md px-2 py-3 hover:text-blue-600"
           >
-            <span className="text-[32px]">
+            <span className="text-[24px]">
               <ion-icon name="duplicate-outline"></ion-icon>
             </span>
             <span className="text-2xl">
@@ -54,6 +54,18 @@ const Sidebar = () => {
             </span>
             <span>Insert New Job</span>
           </Link>
+
+          <div
+            className="flex items-center gap-1 space-x-1 rounded-md px-2 py-3 hover:text-blue-600 hover:cursor-pointer"
+          >
+            <span className="text-[24px]">
+              <ion-icon name="log-out"></ion-icon>
+            </span>
+            <span className="text-2xl">
+              <i className="bx bx-logout" />
+            </span>
+            <span>Logout</span>
+          </div>
         </aside>
       </div>
     </>

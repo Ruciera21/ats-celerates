@@ -1,9 +1,13 @@
 import React from 'react'
+import Sidebar from '../../components/Sidebar'
 
 const ApplicantDetails = () => {
   return (
-    <div>
-        <div className = "card ml-12 mr-12 mt-12">
+    <div className="flex items-start">
+      <Sidebar />
+      <div className='flex flex-col'>
+
+        <div className = "container card ml-12 mr-12 mt-12 font-[Poppins]">
         <div className = "display-content mt-12">
                                           {/* <div className='flex flex-col'> */}
                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">title</h5>
@@ -31,7 +35,7 @@ const ApplicantDetails = () => {
                                 </div>
             </div>
 
-            <div className = "card ml-12 mr-12 mt-12">
+            <div className = "container card ml-12 mr-12 mt-12 font-[Poppins]">
         <div className = "display-content mt-12">
                                           {/* <div className='flex flex-col'> */}
                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Applicant's Details</h5>
@@ -53,6 +57,9 @@ const ApplicantDetails = () => {
                                     {/* </div> */}
                                 </div>
             </div>
+
+      </div>
+
     </div>
   )
 }

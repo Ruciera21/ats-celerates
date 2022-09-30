@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
         <footer>
-              <p className="flex relative top-16 md:top-14">
+              <p className="flex relative top-16 md:top-14 sm:top-12 font-[Poppins]">
                 Celerates 2022
               </p>
             </footer>

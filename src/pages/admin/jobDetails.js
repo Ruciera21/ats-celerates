@@ -1,16 +1,19 @@
 import React from 'react'
+import Sidebar from '../../components/Sidebar'
 import Applicants from './applicants'
 
 const JobDetails = () => {
   return (
-    <div>
-    <div className = "card ml-12 mr-12 mt-12">
+    <div className="flex items-start">
+      <Sidebar />
+      <div className='flex flex-col'>
+    <div className = "container card ml-12 mr-12 mt-12 font-[Poppins]">
         <div className = "display-content mt-12">
                                           <div className='flex flex-col'>
                                           <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">title</h5>
                                         <p className="mb-3 font-normal text-gray-700 ">status</p>
                                           </div>
-                                    <div className="flex flex-row flex-wrap gap-60">
+                                    <div className="flex flex-row flex-wrap gap-20">
                                        
                                        <div className='flex flex-col'>
                                         <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Company:</h5>
@@ -53,6 +56,7 @@ const JobDetails = () => {
             </div>
             <br/>
             <Applicants/>
+      </div>
 
     
     </div>

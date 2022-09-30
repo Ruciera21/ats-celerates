@@ -5,7 +5,7 @@ const Applicants = () => {
   return (
     <div>
       <section>
-        <div className="container ">
+        <div className="container ml-12 font-[Poppins]">
           <table className=" leading-normal table-auto text-sm text-left text-gray-500">
             <tbody>
               <tr

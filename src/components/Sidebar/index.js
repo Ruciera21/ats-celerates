@@ -12,7 +12,7 @@ const Sidebar = () => {
       <div className="flex">
         {/* aside */}
         <aside
-          className="flex flex-nowrap h-screen gap-2 w-fit flex-col space-y-2 border-r-2 border-gray-200 bg-slate-900 p-2 text-white font-[Poppins] text-sm"
+          className="flex flex-nowrap h-screen gap-2 w-max flex-col space-y-2 border-r-2 border-gray-200 bg-slate-900 p-2 text-white font-[Poppins] text-sm"
           x-show="asideOpen"
         >
           <div className="flex items-center gap-3 space-x-1 rounded-md px-2 my-3 pt-1 hover:text-blue-600">
@@ -55,9 +55,7 @@ const Sidebar = () => {
             <span>Insert New Job</span>
           </Link>
 
-          <div
-            className="flex items-center gap-1 space-x-1 rounded-md px-2 py-3 hover:text-blue-600 hover:cursor-pointer"
-          >
+          <div className="flex items-center gap-1 space-x-1 rounded-md px-2 py-3 hover:text-blue-600 hover:cursor-pointer">
             <span className="text-[24px]">
               <ion-icon name="log-out"></ion-icon>
             </span>

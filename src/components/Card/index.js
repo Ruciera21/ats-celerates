@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Card() {
+  const url = "https://ats-app-cap.herokuapp.com/jobs";
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get(url).then((json) => setData(json.data.data));
+  }, []);
+
   return (
     <>
       <section
@@ -35,41 +44,43 @@ function Card() {
               </tr>
             </thead>
             <tbody>
-              <tr
-                // key={index}
-                className="bg-white border-b hover:bg-gray-50 text-center"
-              >
-                <td className="px-6 py-4 font-medium"> role </td>
+              {data.map((company) => (
+                <tr
+                  // key={index}
+                  className="bg-white border-b hover:bg-gray-50 text-center"
+                >
+                  <td className="px-6 py-4 font-medium"> {company.title} </td>
 
-                <td className="px-6 py-4">
-                  {/* {shortenText(res.job_qualification, 10)} */}
-                  Company
-                </td>
+                  <td className="px-6 py-4">
+                    {/* {shortenText(res.job_qualification, 10)} */}
+                    {company.company_name}
+                  </td>
 
-                <td className="px-6 py-4">
-                  {/* {jobStatus(res.job_status)} */}
-                  Type
-                </td>
-                <td className="px-6 py-4">Experience</td>
+                  <td className="px-6 py-4">
+                    {/* {jobStatus(res.job_status)} */}
+                    {company.type}
+                  </td>
+                  <td className="px-6 py-4">{company.level_of_experience}</td>
 
-                <td className="px-6 py-4">Closing date</td>
+                  <td className="px-6 py-4">{company.date_end}</td>
 
-                <td className="px-6 py-4">
-                  <Link to="/user/jobs/jobId">
-                    <button
-                      // onClick={handleEdit}
-                      // value={res.id}
-                      className="font-medium text-blue-600 hover:underline"
-                    >
-                      Details
-                    </button>
-                  </Link>
-                  {/* <button 
+                  <td className="px-6 py-4">
+                    <Link to="/user/jobs/jobId">
+                      <button
+                        // onClick={handleEdit}
+                        // value={res.id}
+                        className="font-medium text-blue-600 hover:underline"
+                      >
+                        Details
+                      </button>
+                    </Link>
+                    {/* <button 
                                     onClick={handleDelete} 
                                     value={res.id} 
                                     className="font-medium text-red-600 hover:underline">Delete</button> */}
-                </td>
-              </tr>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

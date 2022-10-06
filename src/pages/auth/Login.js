@@ -139,7 +139,7 @@ const Login = () => {
                 Don't have account?
                 <Link
                   to="/register"
-                  className="relative left-28 md:text-sm hover:underline decoration-dotted decoration-1 underline-offset-2"
+                  className="relative left-28 text-xs hover:underline decoration-dotted decoration-1 underline-offset-2"
                 >
                   Register
                 </Link>

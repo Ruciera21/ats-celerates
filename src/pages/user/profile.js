@@ -10,7 +10,7 @@ const Sidebar = () => {
         className="flex h-screen items-center justify-center"
         x-show="asideOpen"
       >
-        <div className="bg-gray-200 px-10 py-10 flex gap-3 text-black h-screen">
+        <div className="bg-gray-200 px-10 py-10 flex gap-3 text-black h-screen font-[Poppins]">
           <ul className="flex flex-col gap-2">
             <Link to="/user/profile">
               <li>
@@ -41,7 +41,7 @@ export const Profile = () => {
         <Navbar />
         <div className="flex flex-row xl:mx-24">
         <Sidebar />
-        <section className="flex mx-auto">
+        <section className="flex mx-auto font-[Poppins]">
         <div className="container w-fit h-fit border-none">
         <div className="display-content py-10">
           <div className="flex flex-col text-center items-center">
@@ -108,7 +108,7 @@ export const EditProfile = () => {
         <div className="flex flex-row xl:mx-24">
 
         <Sidebar />
-        <section className="flex h-screen">
+        <section className="flex h-screen font-[Poppins]">
 
     <form className="personal-info ml-11 container flex flex-col gap-2 py-10">
             <div className="flex flex-row gap-4">
@@ -172,7 +172,7 @@ export const Experience = () => {
         <Navbar />
         <div className="flex flex-row xl:mx-24">
         <Sidebar />
-        <section className="flex h-screen">
+        <section className="flex h-screen font-[Poppins]">
           <form className="exp-container ml-11 container flex flex-col gap-2 py-10">
           <div className="flex flex-col">
               <label>Company Name</label>
@@ -208,7 +208,9 @@ export const Experience = () => {
           </form>
         </section>
         
-        <section className="flex h-screen">
+        <div className="flex flex-col">
+
+        <section className="flex font-[Poppins]">
           <div className="exp-container ml-11 container flex flex-col gap-2 py-10">
           <div className="flex flex-col">
               <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Company Name</h5>
@@ -242,6 +244,7 @@ export const Experience = () => {
           </div>
         </section>
         </div>
+        </div>
       </div>
     </>
   );
@@ -254,7 +257,7 @@ export const Skills = () => {
         <Navbar />
         <div className="flex flex-row xl:mx-24">
         <Sidebar />
-        <section className="flex h-screen py-10">
+        <section className="flex h-screen py-10 font-[Poppins]">
         <form className="skills container ml-11">
             <div className="flex flex-col">
               <label>Skills</label>
@@ -267,7 +270,7 @@ export const Skills = () => {
           </form>
         </section>
 
-        <section className="flex h-screen">
+        <section className="flex h-screen font-[Poppins]">
           <div className="skills-container ml-11 container flex flex-col gap-2 py-10">
             <div className="flex flex-col">
               <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">Skills</h5>

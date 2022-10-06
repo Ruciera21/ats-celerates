@@ -7,7 +7,7 @@ const Application = () => {
       <Navbar />
       <section className="container my-9">
         <div className="justify-around flex ">
-          <table className=" leading-normal table-auto text-sm text-gray-500 flex-row flex-[100vh]">
+          <table className=" leading-normal table-auto text-sm text-gray-500 flex-row flex-[100vh] font-[Poppins]">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 text-center">
               <tr>
                 <th className="px-6 py-3">Applied On</th>

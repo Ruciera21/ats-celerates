@@ -1,10 +1,12 @@
+import Cookies from "js-cookie";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import PP from "../../assets/pp.jpg";
 import "./style.css";
 
 function Dropdown() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate()
 
   return (
     <div className="flex items-center md:order-2">
@@ -65,6 +67,31 @@ function Dropdown() {
               ></Link>
             </li> */}
 
+              {!Cookies.get('token') && 
+              <li>
+              <Link
+                to="/login"
+                className="
+              dropdown-item
+              text-sm
+              py-2
+              px-4
+              font-normal
+              md:block
+              hidden
+              w-full
+              whitespace-nowrap
+              bg-transparent
+              text-gray-700
+              hover:bg-gray-100
+            "
+              >
+                Login
+              </Link>
+            </li>
+              }
+
+            {Cookies.get('token') && <>
             <li>
               <Link
                 to="/user/profile"
@@ -86,8 +113,12 @@ function Dropdown() {
             </li>
 
             <li>
-              <Link
-                to="/login"
+              <button
+                onClick={()=>{
+                  Cookies.remove('token')
+                  Cookies.remove('user')
+                  navigate('/login')
+              }}
                 className="
               dropdown-item
               text-sm
@@ -101,33 +132,17 @@ function Dropdown() {
               bg-transparent
               text-gray-700
               hover:bg-gray-100
-            "
-              >
-                Login
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="/"
-                className="
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              md:block
-              hidden
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              text-gray-700
-              hover:bg-gray-100
+              uppercase
             "
               >
                 Logout
-              </Link>
+              </button>
             </li>
+            </>
+            }
+
+            
+
           </ul>
         </div>
       </div>

@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from "../../components/Navbar/navbar";
 
 const JobDetail = () => {
   return (
     <div>
-      <div className="card container ml-12 mr-12 mt-12">
+      <Navbar/>
+      <div className="card container mx-auto my-8 py-8 font-[Poppins]">
         <div className="display-content mt-12">
           <div className="flex flex-col">
             <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900">

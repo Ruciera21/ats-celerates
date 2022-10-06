@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo-celerates.svg";
@@ -13,7 +14,7 @@ function Navbar() {
       <div className="flex items-center font-[Poppins] font-medium justify-start">
         <div className="z-50 md:w-auto w-full flex justify-between">
           <Link to="/">
-            <div className="image-wrapper flex relative pt-4 px-4 mr-96 right-16 md:left-24 md:bg-white">
+            <div className="image-wrapper flex relative pt-4 px-8 mr-96 right-16 md:left-24 md:bg-white">
               <img
                 src={Logo}
                 alt="celerates-logo"
@@ -43,11 +44,13 @@ function Navbar() {
             </Link>
           </li>
 
+          {Cookies.get('token') && 
           <li>
             <Link to="/user/applications" className="py-3 px-4 inline-flex">
               Applications
             </Link>
           </li>
+          }
           <Dropdown />
         </ul>
         {/* mobile view */}
@@ -68,11 +71,13 @@ function Navbar() {
               Careers
             </Link>
           </li>
+          {Cookies.get('token') &&
           <li>
             <Link to="/" className="py-8 px-3 inline-block">
               Applications
             </Link>
           </li>
+          }
         </ul>
       </div>
     </nav>

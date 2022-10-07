@@ -43,7 +43,7 @@ const Sidebar = () => {
             <span>Job Board</span>
           </Link>
           <Link
-            to="/admin/jobs/form"
+            to="/admin/jobs/form/create"
             className="flex items-center gap-1 space-x-1 rounded-md px-2 py-3 hover:text-blue-600"
           >
             <span className="text-[24px]">

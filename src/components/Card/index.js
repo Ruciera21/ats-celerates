@@ -65,7 +65,7 @@ function Card() {
                   <td className="px-6 py-4">{company.date_end}</td>
 
                   <td className="px-6 py-4">
-                    <Link to="/user/jobs/jobId">
+                    <Link to={`/user/jobs/${company.id}`}>
                       <button
                         // onClick={handleEdit}
                         // value={res.id}

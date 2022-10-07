@@ -1,5 +1,5 @@
 import Home from "./pages/user/home";
-import { Routes, BrowserRouter, Route } from "react-router-dom";
+import { Routes, BrowserRouter, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Dashboard from "./pages/admin";
 import JobsList from "./pages/admin/jobsList";
@@ -15,8 +15,10 @@ import JobForm from "./pages/admin/jobForm";
 import Sidebar from "./components/Sidebar";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import Cookies from "js-cookie";
 
 function App() {
+
   return (
     <>
       <BrowserRouter>
@@ -31,7 +33,6 @@ function App() {
             }
           />
           <Route
-            exact
             path="/admin/jobs"
             element={
               // <LayoutAdmin>
@@ -40,7 +41,7 @@ function App() {
             }
           />
           <Route
-            path="/admin/jobs/jobId"
+            path="/admin/jobs/:jobId"
             element={
               // <LayoutAdmin>
               <JobDetails />
@@ -48,7 +49,15 @@ function App() {
             }
           />
           <Route
-            path="/admin/jobs/form"
+            path="/admin/jobs/form/create"
+            element={
+              // <LayoutAdmin>
+              <JobForm />
+              // </LayoutAdmin>
+            }
+          />
+          <Route
+            path="/admin/jobs/form/edit/:Id"
             element={
               // <LayoutAdmin>
               <JobForm />
@@ -63,14 +72,31 @@ function App() {
               // </LayoutAdmin>
             }
           />
-          <Route path="/user/profile" element={<Profile />} />
-          <Route path="/user/profile/edit" element={<EditProfile />} />
-          <Route path="/user/profile/skills" element={<Skills />} />
-          <Route path="/user/profile/experience" element={<Experience />} />
-          <Route path="/user/applications" element={<Application />} />
-          <Route path="/user/jobs/jobId" element={<JobDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/user/jobs/:jobId" element={<JobDetail />} />
+          {Cookies.get('token') &&
+          <>
+            <Route path="/user/profile" element={<Profile />} />
+            <Route path="/user/profile/edit" element={<EditProfile />} />
+            <Route path="/user/profile/skills" element={<Skills />} />
+            <Route path="/user/profile/experience" element={<Experience />} />
+            <Route path="/user/applications" element={<Application />} />
+            <Route path="/login" element={<Navigate to="/" replace />} />
+            <Route path="/register" element={<Navigate to="/" replace />} />
+          </>
+          }
+
+          {!Cookies.get('token') && 
+          <>
+            <Route path="/user/profile" element={<Navigate to="/login" replace />} />
+            <Route path="/user/profile/edit" element={<Navigate to="/login" replace />} />
+            <Route path="/user/profile/skills" element={<Navigate to="/login" replace />} />
+            <Route path="/user/profile/experience" element={<Navigate to="/login" replace />} />
+            <Route path="/user/applications" element={<Navigate to="/login" replace />} />
+            <Route path="/login" element={<Login />}  />
+            <Route path="/register" element={<Register />} />
+          </>
+          }
+            
         </Routes>
       </BrowserRouter>
     </>
